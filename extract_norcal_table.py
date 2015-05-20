@@ -11,4 +11,5 @@ soup = BeautifulSoup(page)
 tables = soup.findAll("table")
 tables[3].find_all('td')
 
-counties = [td.text for td in tables[3].find_all('td')]
+file_ = open('county.txt', 'w')
+counties = [file_.write(td.text) for td in tables[3].find_all('td')]
